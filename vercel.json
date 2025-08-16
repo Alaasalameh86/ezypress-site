@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/istighfar-ar/:match*", "destination": "/istighfar-ar/:match*" },
+    { "source": "/istighfar-en/:match*", "destination": "/istighfar-en/:match*" }
+  ]
+}
