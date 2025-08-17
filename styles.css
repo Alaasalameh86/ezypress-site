@@ -1,0 +1,309 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8fafc;
+}
+
+.rtl { direction: rtl; text-align: right; }
+.ltr { direction: ltr; text-align: left; }
+.hidden { display: none !important; }
+
+
+
+/* Header */
+/*.header {
+  background: linear-gradient(to bottom, #0d47a1, #1976d2);
+  color: #fff;
+  padding: 1rem 0;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(37,99,235,.2);
+}*/
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* اللوجو + النص بمحاذاة واحدة */
+.logo-container { display: flex; align-items: center; gap: 12px; }
+
+/* حجم اللوجو ثابت ويكبر تدريجياً حسب العرض */
+
+
+.logo {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+
+.logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+@media (min-width: 768px) { .logo { width: 74px; height: 74px; } }
+@media (min-width: 1024px) { .logo { width: 88px; height: 88px; } }
+
+.logo-text h1 { font-size: 1.8rem; font-weight: 700; margin: 0 0 .2rem; }
+.logo-text p  { font-size: .9rem; opacity: .9; margin: 0; }
+
+/* زر اللغة */
+.language-switcher {
+  background: rgba(255,255,255,.2);
+  border: 2px solid rgba(255,255,255,.3);
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .3s;
+}
+.language-switcher:hover { background: rgba(255,255,255,.3); transform: translateY(-2px); }
+
+/* Hero Section */
+/*.hero {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: white; padding: 4rem 0; text-align: center;
+}*/
+
+.hero-container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+
+.hero h2 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+.subtitle { font-size: 1.3rem; margin-bottom: 1.5rem; opacity: 0.9; }
+.description { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8; line-height: 1.6; }
+
+.cta-button {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #0A74DA; color: #FFFFFF; padding: 1rem 2rem; border-radius: 50px;
+  text-decoration: none; font-weight: 600; font-size: 1.1rem;
+  transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+.cta-button:hover { background: #00bfff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
+
+.icon { width: 20px; height: 20px; }
+
+/* Books Section */
+
+
+
+
+.books-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+.section-title {
+  text-align: center; font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 3rem;
+}
+
+.books-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem; margin-bottom: 2rem;
+}
+
+.book-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* بدلاً من cover لتظهر الصورة كاملة بوضوح */
+  display: block;
+}
+
+.book-cover-container {
+    width: 100%;
+    height: auto; /* حتى يأخذ ارتفاع الصورة الأصلي */
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f3f4f6; /* لون خلفية خفيف */
+}
+
+.book-cover-container img {
+    width: 100%;
+    height: auto; /* يحافظ على أبعاد الصورة الأصلية */
+    object-fit: contain; /* إظهار الصورة كاملة بدون قص */
+    display: block;
+}
+
+
+.price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #0A74DA;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 25px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    box-shadow: 0 2px 10px rgba(37,99,235,0.3);
+}
+
+.book-content { padding: 2rem; }
+.book-title { font-size: 1.5rem; font-weight: 700; color: #222222; margin-bottom: 1rem; line-height: 1.3; }
+.book-description { color: #64748b; margin-bottom: 1.5rem; line-height: 1.6; }
+
+.book-button {
+  display: inline-flex; align-items: center; gap: 0.5rem; background: #0A74DA; color: white;
+  padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;
+  transition: all 0.3s ease; width: 100%; justify-content: center;
+}
+.book-button:hover { background: #004A99; transform: translateY(-2px); }
+
+/* About */
+.about-section {
+  background: linear-gradient(to bottom, #f7f3eb 0%, #ffffff 100%);
+  padding: 50px 0;
+}
+.about-container { max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; }
+.about-description { font-size: 1.1rem; color: #64748b; line-height: 1.8; }
+
+/* Contact */
+.contact-section {
+  background-color: #f0f0f0; 
+  padding: 50px 0;
+  border-top: 2px solid #e0e0e0; /* خط فاصل بسيط */
+}
+.contact-container { max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; }
+.contact-intro { font-size: 1.3rem; color: #2563eb; font-weight: 600; margin-bottom: 1rem; }
+.contact-description { font-size: 1.1rem; color: #64748b; margin-bottom: 3rem; line-height: 1.6; }
+
+.contact-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem; margin-bottom: 3rem;
+}
+.contact-card { background: #f8fafc; padding: 2rem; border-radius: 15px; border: 1px solid #e2e8f0; }
+.contact-icon { font-size: 2rem; margin-bottom: 1rem; }
+.contact-title { font-size: 1.2rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem; }
+.contact-info { color: #64748b; font-weight: 500; }
+
+.social-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.social-button {
+  display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white;
+  padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+}
+.social-button:hover { background: #1e40af; transform: translateY(-2px); }
+
+/* Footer */
+.footer { background: #1e293b; color: white; padding: 2rem 0; text-align: center; }
+.footer-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h2 { font-size: 2rem; }
+  .subtitle { font-size: 1.1rem; }
+  .books-grid { grid-template-columns: 1fr; }
+  .header-container { padding: 0 1rem; }
+  .hero-container, .books-container, .about-container, .contact-container { padding: 0 1rem; }
+  .social-links { flex-direction: column; align-items: center; }
+}
+
+/* RTL tweaks */
+.rtl .price-tag { right: auto; left: 15px; }
+.rtl .header-container { flex-direction: row-reverse; }
+.rtl .logo-container { flex-direction: row-reverse; }
+
+/* Placeholder */
+.image-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: #64748b; font-size: 1rem; font-weight: 600; text-align: center; padding: 1rem;
+}
+
+/* خلفية موحدة للهيدر + الهيرو */
+.top-band {
+  background: linear-gradient(135deg, #01469b, #000000);
+  color: #fff;
+}
+
+/* الهيدر شفاف فوق الخلفية */
+.header {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  padding: 15px 0 0; /* مسافة بسيطة فوق */
+}
+
+/* إزالة الخلفية البيضا من الشعار */
+.logo {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* الهيرو شفاف فوق الخلفية */
+.hero {
+  background: transparent;
+  text-align: center;
+  margin: 0;
+  padding: 80px 20px 80px; /* مسافة كافية فوق وتحت */
+}
+
+/* ضبط عرض النصوص في الهيرو */
+.hero-container { 
+  max-width: 900px; 
+  margin: 0 auto; 
+}
+
+/* تباعد النصوص */
+.hero h2 { margin-bottom: 20px; }
+.hero p { margin-bottom: 30px; }
+
+/* مسافة واضحة قبل قسم الكتب */
+/*.books-section{
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #C6A664 0%, #b3d4fc 100%);
+  margin-top: 0;
+}*/
+
+/*C6A664*/
+/*b3d4fc*/
+/*0073e6*/
+/*005bb5*/
+
+/* تعديل تدرج الخلفية */
+.books-section {
+padding: 4rem 0;
+    background: linear-gradient(
+        to right,
+        #002f5f 0%,        /* الأزرق الغامق */
+        #1a4d80 25%,       /* أزرق متوسط */
+        #f3e4c5 60%,       /* البيج الفاتح */
+        #dcd0b0 100%       /* بيج أغمق قليلاً للتوازن */
+    );
+margin-top: 0;
+}
+
+/* تعديل الأزرار */
+/*.book-button {
+    background: linear-gradient(to right, #0073e6, #005bb5); /* تدرج أزرق */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}*/
+
+/*.book-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}*/
